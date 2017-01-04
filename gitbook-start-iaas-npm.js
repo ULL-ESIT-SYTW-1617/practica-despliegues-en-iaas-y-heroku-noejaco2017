@@ -50,6 +50,7 @@ function initialize(directorio) {
         if (err) {
             return console.error(err);
         }
+      });
         fs.writeFileSync(path.resolve(process.cwd()+"/"+directorio,'gulpfile.js'), contenido1,  {'flag':'a'},  function(err) {
             if (err) {
                 return console.error(err);
