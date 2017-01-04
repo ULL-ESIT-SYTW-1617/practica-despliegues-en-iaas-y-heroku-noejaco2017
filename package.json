@@ -1,0 +1,28 @@
+{
+  "name": "plugin-ssh-npm",
+  "version": "1.0.0",
+  "description": "plugin iaas npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "gitbook-start-iaas-npm"
+  },
+  "bin": {
+    "gitbook-start": "gitbook-start-iaas-npm.js"
+  }
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-noejaco2017.git"
+  },
+  "keywords": [
+    "gitbook-start-iaas-npm"
+  ],
+  "author": "alu0100622492@ull.edu.es",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-noejaco2017/issues"
+  },
+  "homepage": "https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-noejaco2017#readme",
+  "dependencies": {
+    "simple-ssh": "^0.9.0"
+  }
+}
