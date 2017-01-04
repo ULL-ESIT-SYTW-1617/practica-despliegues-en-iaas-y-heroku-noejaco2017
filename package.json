@@ -2,10 +2,7 @@
   "name": "plugin-ssh-npm-noejaco17",
   "version": "1.0.5",
   "description": "plugin iaas npm",
-  "main": "index.js",
-  "scripts": {
-    "test": "gitbook-start-iaas-npm"
-  },
+  "main": "gitbook-start-iaas-npm",
   "bin": {
     "gitbook-start": "gitbook-start-iaas-npm.js"
   },
