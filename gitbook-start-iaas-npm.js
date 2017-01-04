@@ -145,9 +145,9 @@ function datos_usuario_token(directorio){
 
             fs.writeFileSync(path.join(process.cwd()+"/"+directorio,".iaas-heroku.json"),iaas_config);
 
-            var token = require(path.join(process.cwd(), ".token_heroku","token.json"));
+            //var token = require(path.join(process.cwd(), ".token_heroku","token.json"));
 
-            var her = new heroku({ token : token.Heroku.token_heroku });
+            //var her = new heroku({ token : iaas_config.IAAS.token_heroku });
 
 
 
