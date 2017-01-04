@@ -8,7 +8,7 @@
   },
   "bin": {
     "gitbook-start": "gitbook-start-iaas-npm.js"
-  }
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-noejaco2017.git"
@@ -23,6 +23,9 @@
   },
   "homepage": "https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-noejaco2017#readme",
   "dependencies": {
+    "fs-extended": "^0.2.1",
+    "heroku-client": "^3.0.0-beta3",
+    "prompt": "^1.0.0",
     "simple-ssh": "^0.9.0"
   }
 }
