@@ -13,12 +13,12 @@ function initialize(directorio) {
     console.log("\nGenerando tarea gulp!!!!!")
 
     var contenido = `gulp.task("push-iaas" ,function(){
-            var heroku = require("gitbook-start-iaas-npm-noejaco17");
+            var heroku = require("plugin-ssh-npm-noejaco17");
             heroku.deployiaas();
      });`;
 
      var contenido1 = `gulp.task("push-heroku" ,function(){
-             var heroku = require("gitbook-start-iaas-npm-noejaco17");
+             var heroku = require("plugin-ssh-npm-noejaco17");
              heroku.deployheroku();
       });`;
     //  fs.copyFile(path.join(__dirname,'..','book.json'),"./" + directorio + "/book.json",function(err){
