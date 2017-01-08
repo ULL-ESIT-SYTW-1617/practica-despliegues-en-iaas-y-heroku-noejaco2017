@@ -77,14 +77,26 @@ function initialize(directorio) {
 //
 function deployiaas(){
 
+console.log("Llego a deployiaas");
+var config = require(path.resolve(process.cwd(),".iaas-heroku.json"));
+
+var host = config.IAAS.host ;
+var user = config.IAAS.user ;
+var pass = config.IAAS.pass ;
+var path = config.IAAS.path ;
+// var id_client= apli.Config.id_client;
+// var secret_client= apli.Config.secret_client;
+// var organizacion = apli.Config.organizacion;
+console.log("Mostramos numero de host :"+host);
+
 
 var ssh = new SSH({
-host: 'localhost',
-user: 'username',
-pass: 'password'
+host: host,
+user: user,
+pass: pass
 });
 
-ssh.exec('echo $PATH', {
+ssh.exec(path, {
 out: function(stdout) {
     console.log(stdout);
 }
@@ -133,6 +145,9 @@ function datos_usuario_token(directorio){
                 name: 'pass',
                 require: true
             },{
+                name: 'path',
+                require: true
+            },{
                 name: 'token_heroku',
                 require: true
             }], function (err, result) {
@@ -146,7 +161,7 @@ function datos_usuario_token(directorio){
 
 
             //variable con el contenido de config.json
-            var iaas_config = '{\n "IAAS":{\n\t"host": "'+result.host+'",\n\t "user": "'+result.user+'",\n\t"pass":"'+result.pass+'"\n\t,\n\t "token_heroku": "'+result.token_heroku+'"}\n}';
+            var iaas_config = '{\n "IAAS":{\n\t"host": "'+result.host+'",\n\t "user": "'+result.user+'",\n\t"pass":"'+result.pass+'",\n\t "token_heroku": "'+result.token_heroku+',\n\t "token_heroku": "'+result.path+'"}\n}';
 
             fs.writeFileSync(path.join(process.cwd()+"/"+directorio,".iaas-heroku.json"),iaas_config);
 

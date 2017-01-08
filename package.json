@@ -1,6 +1,6 @@
 {
   "name": "plugin-ssh-npm-noejaco17",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "plugin iaas npm",
   "main": "gitbook-start-iaas-npm",
   "bin": {
