@@ -1,4 +1,4 @@
-var fs = require('fs');
+var fs = require('fs-extra');
 var path = require('path');
 var child = require("child_process");
 var fs_extended = require('fs-extended');
@@ -15,12 +15,17 @@ function initialize(directorio) {
     var contenido = `gulp.task("push-iaas" ,function(){
             var heroku = require("plugin-ssh-npm-noejaco17");
             heroku.deployiaas();
-     });`;
-
-     var contenido1 = `gulp.task("push-heroku" ,function(){
+     });
+     gulp.task("push-heroku" ,function(){
              var heroku = require("plugin-ssh-npm-noejaco17");
              heroku.deployheroku();
       });`;
+
+      fs.writeFileSync(path.resolve(process.cwd()+"/"+directorio,'gulpfile.js'), contenido,  {'flag':'a'},  function(err) {
+       if (err) {
+       console.error(err);
+       }
+   });
     //  fs.copyFile(path.join(__dirname,'..','book.json'),"./" + directorio + "/book.json",function(err){
     //       if(err)
     //       console.log(err);
@@ -46,17 +51,17 @@ function initialize(directorio) {
     //  });
 
     //añadimos la tarea
-    fs.writeFileSync(path.resolve(process.cwd()+"/"+directorio,'gulpfile.js'), contenido,  {'flag':'a'},  function(err) {
-        if (err) {
-            return console.error(err);
-        }
-      });
-        fs.writeFileSync(path.resolve(process.cwd()+"/"+directorio,'gulpfile.js'), contenido1,  {'flag':'a'},  function(err) {
-            if (err) {
-                return console.error(err);
-            }
-
-    });
+    // fs.writeFileSync(path.resolve(process.cwd()+"/"+directorio,'gulpfile.js'), contenido,  {'flag':'a'},  function(err) {
+    //     if (err) {
+    //         return console.error(err);
+    //     }
+    //   });
+    //     fs.writeFileSync(path.resolve(process.cwd()+"/"+directorio,'gulpfile.js'), contenido1,  {'flag':'a'},  function(err) {
+    //         if (err) {
+    //             return console.error(err);
+    //         }
+    //
+    // });
     // fs_extended.copyFile(path.join(process.cwd(),'node_modules','gitbook-start-heroku-localstrategy-noejaco17','Procfile'),path.join(process.cwd()+"/"+directorio, 'Procfile'),function(err){
     //     if(err)
     //     console.log(err);
